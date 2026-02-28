@@ -1,0 +1,93 @@
+:root{
+    --primary:#744B93;
+    --secondary:#C889B5;
+    --light:#F0F0F0;
+    --medium:#FCE5CC;
+    --dark:#D0ADC4;
+    --dark2:#736EAE;
+}
+
+.design{
+    display: flex;
+    flex: row;
+    
+   
+}
+.image{
+    flex:1;
+    display:flex;
+   
+}
+
+img{
+    width:100%;
+    height:100vh;
+    z-index:1;
+    object-fit: cover;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't break widths */
+}
+
+body {
+    overflow: hidden;
+    background-color: var(--primary);
+}
+
+.form_l{
+    display:flex;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_design_1{
+    border:solid 1px black;
+    display: flex;
+    flex-direction: column;
+    width:75%;
+    height:75%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary);
+    border-radius: 20px;
+    
+}
+.label{
+    display:flex;
+    flex-direction: row;
+    gap:25px;
+}
+input{
+    padding:5px;
+}
+
+.bt{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.bt button{
+    margin: 10px;
+    width:30vh;
+    font-size: large;
+    font-weight: bold;
+    background-color: var(--medium);
+}
+
+.lable_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.bt button:hover{
+    background-color: var(--dark2);
+    transition: ease-in-out 3ms;
+    cursor: pointer;
+}
+
