@@ -13,7 +13,7 @@ function Orders(){
     }
     const [getstate_1,getbt_1]=useState(false)
     const switch_b_1=async(e)=>{
-        if (e) e.preventDefault(); // Prevent form submission
+     e.preventDefault(); // Prevent form submission
     const next_state = !getstate_1;
     getbt_1(next_state);
     
@@ -45,7 +45,8 @@ function Orders(){
                     // start_date:getdate.start_date,
                     // finish_date:getdate.finish_date,
                     amount:getdate.amount,
-                    default_amount:getdate.default_
+                    default_amount:getdate.default_,
+                    active_prd:getdate.active_prd
                 })
                     
                 
@@ -65,7 +66,8 @@ function Orders(){
         start_date:'',
         finish_date:'',
         amount:'',
-        default_:0
+        default_:0,
+        active_prd:''
     })
     const st_date=async(e)=>{
         setdate({
@@ -77,7 +79,9 @@ function Orders(){
     const [drop,setdrop]=useState([])
 
     const fetch_drop=async(e)=>{
+        if (e && e.preventDefault) {
         e.preventDefault();
+    }
         const res=await fetch('http://localhost:8000/product_name/',{
             method:'POST',
             headers:{
@@ -98,9 +102,7 @@ function Orders(){
             
 
          }
-        
-    
-    
+ 
     return(
         <>
         <div className={`sidebar_order ${trans ? 'on':''}`}>
@@ -191,13 +193,15 @@ function Orders(){
                 </form>
                 <form>
                     <div className='order_button_product'>
-                <button onClick={switch_b_1} >Product Filter</button>
+                <button onClick={switch_b_1}  type='button'>Product Filter</button>
                 {getstate_1 &&(
                     
-                    <select required onChange={st_date}>
-                        <option>Select a product</option>
+                    <select required onChange={st_date} name='active_prd' value={getdate.active_prd}>
+                        <option value={''}>Select a product</option>
                          {drop.map((dr)=>(
-                            <option>{dr.product_name}</option>
+                            <option key={dr.product_name} value={dr.product_name}>
+                                {dr.product_name}
+                            </option>
                         ))} 
                     </select>
                 )}
