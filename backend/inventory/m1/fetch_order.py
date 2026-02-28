@@ -14,7 +14,9 @@ def order(request):
             active_prd=data.get('active_prd')
             default_am=data.get('default_amount')
             am=data.get('amount')
-            if(am==''):
+            ard=data.get('active_prd')
+            print(f"content is {ard}")
+            if(am=='' and ard==''):
                 def_am=int(default_am)
                 take=staff_logs.objects.filter(staff_id=staff_id)
                 if not take:
@@ -39,8 +41,8 @@ def order(request):
                     return JsonResponse('the staff doesnt exist')
                 for l in take:
             
-                    if(am):
-                        if(int(l.amount)>=amount):
+                    if(am and ard):
+                        if(int(l.amount)>=amount and str(l.product_name)==ard):
                                 hold={
                                     'product_id':l.product_id,
                                     'product_name':l.product_name,
@@ -51,7 +53,35 @@ def order(request):
                                     
                                 }
                                 hold_list.append(hold)
-                                
+                        
+                    if(am):
+                        if(int(l.amount)>=amount):
+                            hold={
+                                    'product_id':l.product_id,
+                                    'product_name':l.product_name,
+                                    'amount':l.amount,
+                                    'payment_date':l.payment_date,
+                                    'payment_time':l.payment_time
+                                    
+                                    
+                                }
+                            hold_list.append(hold)
+                    if(ard):
+                        if(str(l.product_name)==ard):
+                            hold={
+                                    'product_id':l.product_id,
+                                    'product_name':l.product_name,
+                                    'amount':l.amount,
+                                    'payment_date':l.payment_date,
+                                    'payment_time':l.payment_time
+                                    
+                                    
+                                }
+                            hold_list.append(hold)
+                            
+                        
+                            
+
                         
                     else:
                         hold={
