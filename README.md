@@ -835,6 +835,9 @@ We encourage community contributions! If you're interested in helping develop an
 - **Aaronica123** - Initial project development and implementation
   - GitHub: [@Aaronica123](https://github.com/Aaronica123)
   - Project Lead and Backend Development
+     # Authors
+
+- Aaron Mutua [https://www.linkedin.com/in/aaron-mutua-62687a268]
 
 ### Contributors
 - Open for community contributions!
