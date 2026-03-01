@@ -42,8 +42,8 @@ function Orders(){
                 
                 body:JSON.stringify({
                     staff_id:localStorage.getItem('staff_id'),
-                    // start_date:getdate.start_date,
-                    // finish_date:getdate.finish_date,
+                    start_date:getdate.start_date,
+                    finish_date:getdate.finish_date,
                     amount:getdate.amount,
                     default_amount:getdate.default_,
                     active_prd:getdate.active_prd
@@ -179,11 +179,11 @@ function Orders(){
                 <div className='order_filter_input'>
                 <div className='order_gp'>
                 <label>Start</label>
-                <input className='date' required type='date' name='start_date' value={getdate.start_date} />
+                <input className='date' required type='date' name='start_date' onChange={st_date}value={getdate.start_date} />
                 </div>
                 <div className='order_gp'>
                 <label>Last</label>
-                <input className='date' required type='date' name='finish_date' value={getdate.finish_date} />
+                <input className='date' required type='date' name='finish_date' onChange={st_date} value={getdate.finish_date} />
                 </div>
                 {/* <button>Submit</button> */}
                 </div>)}
