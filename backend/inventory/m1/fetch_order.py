@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 def order(request):
     if(request.method=='POST'):
         try:
-            # print(f"Raw body: {request.body}")
+            print(f"Raw body: {request.body}")
             hold_list=[ ]
             data=json.loads(request.body)
             staff_id=data.get('staff_id')
@@ -35,14 +35,18 @@ def order(request):
                 return JsonResponse(hold_list, safe=False)
             
             else:
-                amount=int(am)
+                
+                
+                
                 take=staff_logs.objects.filter(staff_id=staff_id)
                 if not take:
                     return JsonResponse('the staff doesnt exist')
                 for l in take:
             
                     if(am and ard):
-                        if(int(l.amount)>=amount and str(l.product_name)==ard):
+                        amount=int(am)
+                        ard_1=int(ard)
+                        if(int(l.amount)>=amount and str(l.product_id)==ard_1):
                                 hold={
                                     'product_id':l.product_id,
                                     'product_name':l.product_name,
@@ -55,6 +59,7 @@ def order(request):
                                 hold_list.append(hold)
                         
                     if(am):
+                        amount=int(am)
                         if(int(l.amount)>=amount):
                             hold={
                                     'product_id':l.product_id,
@@ -67,7 +72,8 @@ def order(request):
                                 }
                             hold_list.append(hold)
                     if(ard):
-                        if(str(l.product_name)==ard):
+                        ard_1=int(ard)
+                        if(int(l.product_id)==ard_1):
                             hold={
                                     'product_id':l.product_id,
                                     'product_name':l.product_name,
@@ -78,11 +84,6 @@ def order(request):
                                     
                                 }
                             hold_list.append(hold)
-                            
-                        
-                            
-
-                        
                     else:
                         hold={
                                 'product_id':l.product_id,
@@ -96,10 +97,11 @@ def order(request):
                         hold_list.append(hold)
                 print(f"list is{hold_list}")
                 return JsonResponse(hold_list, safe=False)
+        except ValueError as e:
+            return JsonResponse({'error': f'Invalid number format: {str(e)}'}, status=400)
         except Exception as e:
-            # print(f"Error occurred: {e}")
-            return JsonResponse({'error': str(e)}, status=400)
-    return JsonResponse({'cannot process'})
+            return JsonResponse({'error': str(e)}, status=500)
+    return JsonResponse({'cannot process'}, status=405)
         
                 
             

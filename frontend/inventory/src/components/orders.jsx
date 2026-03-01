@@ -199,7 +199,7 @@ function Orders(){
                     <select required onChange={st_date} name='active_prd' value={getdate.active_prd}>
                         <option value={''}>Select a product</option>
                          {drop.map((dr)=>(
-                            <option key={dr.product_name} value={dr.product_name}>
+                            <option key={dr.product_id} value={dr.product_id}>
                                 {dr.product_name}
                             </option>
                         ))} 
