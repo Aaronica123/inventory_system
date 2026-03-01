@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import logo_1 from '../assets/logo_1.png'
 import shopping_cart from '../assets/shopping-cart.svg'
-import potrait from '../assets/portrait.svg'
 import './orders.css'
 import Sidebar from '../recycle/sidebar';
 import bars from '../assets/bars.svg'
@@ -92,7 +91,7 @@ function Orders(){
         if(res.ok){
             const take=await res.json()
             setdrop(take)
-            alert('items fetched')
+            
 
         }
         else{
@@ -120,9 +119,7 @@ function Orders(){
                     <h2>Side Bar</h2>
 
                 </div>
-                <div className='order_image'>
-                <img src={logo_1} className='design_im'/>
-                </div>
+                
             </div>
             
             <div className='order_label'> 
@@ -133,6 +130,9 @@ function Orders(){
                 </div>
 
             </div>
+            <div className='order_image'>
+                <img src={logo_1} className='design_im'/>
+                </div>
             {/* <div className='order_image'>
                 <img src={potrait} className='design_im1'/>
             </div> */}

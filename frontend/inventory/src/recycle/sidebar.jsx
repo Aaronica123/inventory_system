@@ -1,8 +1,8 @@
 import React from 'react'
 import logo_1 from '../assets/logo_1.png'
-import bars from '../assets/bars.svg'
+
 import './sidebar.css'
-import {replace, useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 function Sidebar(){
     const use_1=useNavigate()
     const lg=useNavigate()
@@ -25,6 +25,7 @@ function Sidebar(){
             localStorage.removeItem('staff_id')
             localStorage.removeItem('staff_name')
             lg('/',{replace:true})
+            
         }
     }
     

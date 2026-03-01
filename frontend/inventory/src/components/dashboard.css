@@ -7,7 +7,17 @@
     --dark2:#736EAE;
 }
 
+.card_h2_design{
+    border:none;
+    width:20%;
+    padding:15px;
+    background-color: var(--light);
+    border-radius: 5px;
+    justify-content: center;
+    margin: 5px;
+    margin-top: 10px;
 
+}
 .dashboard-wrapper {
     display: flex;
     width: 100vw;
@@ -23,6 +33,20 @@
     gap:5px;
 
 }
+.header_hold .header_image{
+    display: flex;
+    flex:1;
+    flex-direction: row;
+    height: 100%;
+    gap:5px;
+    display: flex;
+    flex:1;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+
+}
+
 .header_sidebar{
     display:flex;
     flex-direction: row;
@@ -30,6 +54,8 @@
     height:100%;
     flex:1;
     flex-shrink: 0;
+    margin-left: 15px;
+    gap:5px;
 }
 .header_sidebar h2{
     display: flex;
@@ -69,16 +95,16 @@
     flex-direction: row;
     gap:10px;
     width:100%;
-    height:20%;
+    height:23%;
     background-color: var(--secondary);
     flex-shrink: 0;
 }
-.header_image{
+/* .header_image{
     display: flex;
     flex:1;
     width:100%;
     height:100%;
-}
+} */
 .image_lay{
     display: flex;
     width: 100%;
@@ -112,7 +138,7 @@
 .layout_1{
     display: flex;
     flex-direction: row;
-    gap:10px;
+    gap:45px;
      /* overflow-x: auto; */
     
     padding: 15px;
@@ -120,6 +146,7 @@
     overflow-y: hidden; /* Prevents vertical jitter within the row */
     white-space: nowrap;
     height: fit-content;
+
     
     /* Important for mobile/touch: ensures smooth swiping */
     -webkit-overflow-scrolling: touch;
