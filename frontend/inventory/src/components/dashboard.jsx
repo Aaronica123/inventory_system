@@ -89,7 +89,7 @@ function Dash(){
                     />
                     <Card_1_
                     image={baking_powder}
-                    product_name='baking powder'
+                    product_name='Baking Powder'
                     />
                     <Card_1_
                     image={oranges}

@@ -9,6 +9,7 @@ function Card_1_(request){
         product_name:request.product_name
         
     })
+    
     const handle_f=(e)=>{
         
         setForm({
@@ -35,6 +36,7 @@ function Card_1_(request){
              const respond=await report.json();
              if(report.ok){
                 alert('successfully placed')
+                setForm({ ...getForm, amount: '' });
              }
              else{
                 alert('not ordered failure')
@@ -44,6 +46,47 @@ function Card_1_(request){
         catch(error){
             alert('the fetch failed',error)
         }
+        
+    }
+    
+    // const up_am=async(e)=>{
+    //     setAm({
+    //         ...getam,
+    //         [e.target.name]:e.target.value
+    //     })
+    // }
+    const [getam,setAm]=useState(null)
+    const [st,setSt]=useState(false)
+    const view=async()=>{
+        const hl=!st
+        setSt(hl)
+
+        if(hl){
+             view_am()
+        }
+    }
+    const view_am=async(e)=>{
+        if(e && e.preventDefault){
+            e.preventDefault()
+        }
+        const res=await fetch('http://localhost:8000/fetch_amount/',{
+            method:'POST',
+            headers:{
+                'Content-type':'application/json'
+            },
+            body:JSON.stringify({
+                product_name:request.product_name
+            })
+        })
+        if(res.ok){
+            const hold=await res.json()
+            setAm(hold)
+            alert('Amount Fetched')
+        }
+        else{
+            alert('Amount not fetched')
+        }
+            
         
     }
     return(
@@ -62,6 +105,16 @@ function Card_1_(request){
                 Amount
             </h3>
             <input type='number' required name='amount' value={getForm.amount} onChange={handle_f}/>
+            </div>
+            <div className='stock_design'>
+                <h2 className='stock_label' onClick={view}>
+
+                    {st ? "Hide Stock" : "View Stock"}
+                </h2>
+                {st&&getam &&(
+                    <h2 className='stock_am'>{getam.k}</h2>
+                )}
+                
             </div>
             <div className='bt_1_'>
                 <button typ='submit' name='submit'>Order</button>

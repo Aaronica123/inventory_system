@@ -16,27 +16,30 @@ def log(request):
             payment_date=timezone.now()
             payment_time=timezone.now()
             amount=form_.get('amount')
-            
-            bd= market.objects.get(super_name=product_name)
-            try:
-                bd = market.objects.get(super_name=product_name)
-            except market.DoesNotExist:
-                return JsonResponse({'error': 'Item does not exist'}, status=404)
-            product_id=bd.super_id
-            
-            
-            obj=staff_logs.objects.create(
-                staff_id=staff_id,
-                product_id=product_id,
-                product_name=product_name,
-                amount=amount,
-                payment_date=payment_date,
-                payment_time=payment_time
+            am=int(amount)
+            if(am<0):
+                return JsonResponse({'error':"Amount should be greater than zero"},status=404)
+            else:
+                bd= market.objects.get(super_name=product_name)
+                try:
+                    bd = market.objects.get(super_name=product_name)
+                except market.DoesNotExist:
+                    return JsonResponse({'error': 'Item does not exist'}, status=404)
+                product_id=bd.super_id
                 
-            )
-            return JsonResponse({'message': 'Success'}, status=201)
-                   
+                
+                obj=staff_logs.objects.create(
+                    staff_id=staff_id,
+                    product_id=product_id,
+                    product_name=product_name,
+                    amount=amount,
+                    payment_date=payment_date,
+                    payment_time=payment_time
+                    
+                )
+                return JsonResponse({'message': 'Success'}, status=201)
+                    
         except Exception as e:
-            # 3. CRITICAL: Use 400 or 500 status for errors so React knows it failed
-            return JsonResponse({'error': str(e)}, status=400)
+                # 3. CRITICAL: Use 400 or 500 status for errors so React knows it failed
+                return JsonResponse({'error': str(e)}, status=400)
     return JsonResponse({'error': 'Method not allowed'}, status=405)

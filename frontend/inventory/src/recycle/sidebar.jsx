@@ -9,13 +9,13 @@ function Sidebar(){
     const od=useNavigate()
     const td=useNavigate()
     const cl=async()=>{
-        use_1('/dashboard')
+        use_1('/dashboard',{replace:true})
     }
     const ord=async () => {
         od('/order_details',{replace:true})
     }
     const t=async()=>{
-        td('/profile')
+        td('/profile',{replace:true})
     }
 
 

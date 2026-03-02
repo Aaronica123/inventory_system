@@ -3,8 +3,27 @@
     --d2:#744B93;
     --d3:#FCE5CC;
     --d4:#736EAE;
+    --d5:#F0F0F0;
 }
-
+.stock_design{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+}
+.stock_label{
+    width:fit-content;
+    height: auto;
+    padding:3px;
+    background-color: var(--d3);
+    cursor: pointer;
+}
+.stock_am{
+    width:100%;
+    height: auto;
+    padding:5px;
+    background-color: var(--d5);
+    color: black;
+}
 .card_design{
     display: flex;
     flex-direction: column;

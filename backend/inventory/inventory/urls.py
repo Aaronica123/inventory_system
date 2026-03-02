@@ -22,6 +22,7 @@ from m1.staff_logs_view import log
 from m1.fetch_order import order
 from m1.fetch_profile import Profile
 from m1.fetch_product import product
+from m1.fetch_amount import Amount
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +32,6 @@ urlpatterns = [
     path('logout/',Logout,name='logout'),
     path('order_details/',order,name='order_details'),
     path('profile/', Profile, name='profile'),
-    path('product_name/',product,name='product')
+    path('product_name/',product,name='product'),
+    path('fetch_amount/',Amount,name='Amount')
 ]
