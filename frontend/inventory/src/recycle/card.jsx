@@ -33,7 +33,7 @@ function Card_1_(request){
 
                 }),
             })
-             const respond=await report.json();
+            //  const respond=await report.json();
              if(report.ok){
                 alert('successfully placed')
                 setForm({ ...getForm, amount: '' });
