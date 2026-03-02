@@ -82,28 +82,32 @@ WSGI_APPLICATION = 'inventory.wsgi.application'
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
-if DATABASE_URL:
+# if DATABASE_URL:
     # --- CLOUD SETTINGS (Render/Azure/Supabase) ---
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=DATABASE_URL,
-            conn_max_age=600,
-            ssl_require=True
-        )
-    }
-else:
+DATABASES = {
+    'default': dj_database_url.config(
+        # Note: postgres.strcdhcwzzfkcrelowpb and Port 6543
+        default='postgres://postgres.strcdhcwzzfkcrelowpb:venevaproject@2026@aws-1-eu-west-3.pooler.supabase.com:6543/postgres?sslmode=require',
+        conn_max_age=600,
+        ssl_require=True
+    )
+}
+# else:
     # --- LOCAL SETTINGS (Your Windows PC) ---
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'inventory',
-            'USER': 'postgres',
-            'PASSWORD': 'Aaronica',
-            'HOST': '127.0.0.1',
-            'PORT': '5432',
-            # We remove the SSL requirement here for local testing
-        }
-    }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',  # Changed from 'inventory' to 'postgres'
+#         'USER': 'postgres.strcdhcwzzfkcrelowpb',
+#         'PASSWORD': 'Aaronica',
+#         'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
+#         'PORT': '6543',
+#         # Adding options for more stable cloud handshakes
+#         'OPTIONS': {
+#             'connect_timeout': 10,
+#         }
+#     }
+# }
 
 
 

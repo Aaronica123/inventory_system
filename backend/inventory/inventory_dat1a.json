@@ -1,0 +1,483 @@
+[
+
+{
+  "model": "m1.inventory",
+  "pk": 32,
+  "fields": {
+    "product_name": "Phones",
+    "product_id": 100,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 33,
+  "fields": {
+    "product_name": "Head Phones",
+    "product_id": 101,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 34,
+  "fields": {
+    "product_name": "Television",
+    "product_id": 102,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 35,
+  "fields": {
+    "product_name": "Speakers",
+    "product_id": 103,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 36,
+  "fields": {
+    "product_name": "Washing Machine",
+    "product_id": 104,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 37,
+  "fields": {
+    "product_name": "Dish Washer",
+    "product_id": 105,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 38,
+  "fields": {
+    "product_name": "Juice",
+    "product_id": 106,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 39,
+  "fields": {
+    "product_name": "Cooking Oil",
+    "product_id": 107,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 40,
+  "fields": {
+    "product_name": "Baking Powder",
+    "product_id": 108,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 41,
+  "fields": {
+    "product_name": "Oranges",
+    "product_id": 109,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 42,
+  "fields": {
+    "product_name": "Lemons",
+    "product_id": 110,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 43,
+  "fields": {
+    "product_name": "Cupcake",
+    "product_id": 111,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 44,
+  "fields": {
+    "product_name": "Cake",
+    "product_id": 112,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 45,
+  "fields": {
+    "product_name": "Donuts",
+    "product_id": 113,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 46,
+  "fields": {
+    "product_name": "Bread",
+    "product_id": 114,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 47,
+  "fields": {
+    "product_name": "Shirt",
+    "product_id": 115,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 48,
+  "fields": {
+    "product_name": "Jacket",
+    "product_id": 116,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 49,
+  "fields": {
+    "product_name": "Sweater",
+    "product_id": 117,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 50,
+  "fields": {
+    "product_name": "Trousers",
+    "product_id": 118,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 51,
+  "fields": {
+    "product_name": "Boots",
+    "product_id": 119,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 52,
+  "fields": {
+    "product_name": "Sneakers",
+    "product_id": 120,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 53,
+  "fields": {
+    "product_name": "Watches",
+    "product_id": 121,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 54,
+  "fields": {
+    "product_name": "Necklace",
+    "product_id": 122,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 55,
+  "fields": {
+    "product_name": "Earings",
+    "product_id": 123,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.inventory",
+  "pk": 56,
+  "fields": {
+    "product_name": "Wedding Ring",
+    "product_id": 124,
+    "product_stock": 100
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 43,
+  "fields": {
+    "super_id": 100,
+    "super_name": "Phones",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 44,
+  "fields": {
+    "super_id": 101,
+    "super_name": "Head Phones",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 45,
+  "fields": {
+    "super_id": 102,
+    "super_name": "Television",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 46,
+  "fields": {
+    "super_id": 103,
+    "super_name": "Speakers",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 47,
+  "fields": {
+    "super_id": 104,
+    "super_name": "Washing Machine",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 48,
+  "fields": {
+    "super_id": 105,
+    "super_name": "Dish Washer",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 49,
+  "fields": {
+    "super_id": 106,
+    "super_name": "Juice",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 50,
+  "fields": {
+    "super_id": 107,
+    "super_name": "Cooking Oil",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 51,
+  "fields": {
+    "super_id": 108,
+    "super_name": "Baking Powder",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 52,
+  "fields": {
+    "super_id": 109,
+    "super_name": "Oranges",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 53,
+  "fields": {
+    "super_id": 110,
+    "super_name": "Lemons",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 54,
+  "fields": {
+    "super_id": 111,
+    "super_name": "Cupcake",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 55,
+  "fields": {
+    "super_id": 112,
+    "super_name": "Cake",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 56,
+  "fields": {
+    "super_id": 113,
+    "super_name": "Donuts",
+    "super_stock": 48
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 57,
+  "fields": {
+    "super_id": 114,
+    "super_name": "Bread",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 58,
+  "fields": {
+    "super_id": 115,
+    "super_name": "Shirt",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 59,
+  "fields": {
+    "super_id": 116,
+    "super_name": "Jacket",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 60,
+  "fields": {
+    "super_id": 117,
+    "super_name": "Sweater",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 61,
+  "fields": {
+    "super_id": 118,
+    "super_name": "Trousers",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 62,
+  "fields": {
+    "super_id": 119,
+    "super_name": "Boots",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 63,
+  "fields": {
+    "super_id": 120,
+    "super_name": "Sneakers",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 64,
+  "fields": {
+    "super_id": 121,
+    "super_name": "Watches",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 65,
+  "fields": {
+    "super_id": 122,
+    "super_name": "Necklace",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 66,
+  "fields": {
+    "super_id": 123,
+    "super_name": "Earings",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.market",
+  "pk": 67,
+  "fields": {
+    "super_id": 124,
+    "super_name": "Wedding Ring",
+    "super_stock": 50
+  }
+},
+{
+  "model": "m1.staff_reg",
+  "pk": 1,
+  "fields": {
+    "staff_name": "James",
+    "staff_id": 9001,
+    "pass_word": "pbkdf2_sha256$1200000$JdrQWIb53AlLKVc144kJnI$a4zPnIIirgI+bVE4k5mjSSbbxeuiO1wIQrRySQ5U6nU=",
+    "email": "james@gmail.com"
+  }
+},
+{
+  "model": "m1.staff_reg",
+  "pk": 3,
+  "fields": {
+    "staff_name": "Billy",
+    "staff_id": 3241,
+    "pass_word": "pbkdf2_sha256$1200000$3z1fxs71gPUTB2aK3E66Su$Gag87VGIQ1iMPc3QoN98lrkvRLRUBfFdn3iAbg2fXrA=",
+    "email": "bill@gmail.com"
+  }
+},
+{
+  "model": "m1.staff_reg",
+  "pk": 4,
+  "fields": {
+    "staff_name": "Kian",
+    "staff_id": 1010,
+    "pass_word": "pbkdf2_sha256$1200000$KsWffHMJE4Uw1o8Pv06v6s$tAtnuYexemey5laKD+tccjPFmwCy7AZ//otmlhSo7WE=",
+    "email": "kian@gmail.com"
+  }
+}
+]
