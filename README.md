@@ -52,11 +52,24 @@ The project is organized into two main components:
 
 ## Tech Stack
 
-- **Backend**: Django 3.2+ with Django REST Framework
-- **Frontend**: JavaScript (React/Vue/Angular)
-- **Database**: SQLite/PostgreSQL/MySQL
-- **Python Version**: 3.8 or higher
+- **Backend**: Django (Render)
+- **Frontend**: React (Vercel)
+- **Database**: PostgreSQL(Supabase)
 - **Package Manager**: pip (Python), npm/yarn (Frontend)
+
+### Deployment Information
+- **Frontend**: Deployed on [Vercel](https://vercel.com) for a seamless integration and automated deployments.
+- **Backend**: Hosted on [Render](https://render.com) for managing APIs with efficient deployment and scaling.
+- **Database**: Using [Supabase](https://supabase.com) for a real-time database solution that supports SQL.
+
+## Accessing the System
+
+- **Deployment URL**: [https://inventory-system-wine-three.vercel.app/](https://inventory-system-wine-three.vercel.app/)
+- **Default Staff Credentials**:
+  - **Staff ID**: 1010
+  - **Password**: 12345
+
+
 
 ## Getting Started
 
@@ -135,12 +148,7 @@ JWT_EXPIRATION_HOURS=24
 CORS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:8000
 API_BASE_URL=http://localhost:8000
 
-# Email Configuration (optional)
-EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_HOST_USER=your_email@gmail.com
-EMAIL_HOST_PASSWORD=your_password
+
 ```
 
 ### Step 5: Database Setup
@@ -155,8 +163,7 @@ python manage.py makemigrations
 # Apply migrations
 python manage.py migrate
 
-# Create superuser (admin account)
-python manage.py createsuperuser
+
 
 # Load initial data (if available)
 python manage.py loaddata initial_data
@@ -283,17 +290,13 @@ Open your browser and navigate to `http://localhost:3000`
    - Data consistency and integrity
    - Django ORM for reliable data handling
 
-### 7. **Dashboard & Reporting**
-   - Staff performance metrics
-   - Sales and inventory reports
-   - Daily summary and analytics
-   - Export reports to CSV/PDF
+
 
 ### 8. **User Management**
    - Add and manage staff accounts
    - Permission levels and access control
    - Activity logging and audit trails
-   - Django admin panel for management
+  
 
 ---
 
@@ -472,45 +475,12 @@ inventory_system/
 4. Enter the quantity you want to check out
 5. Review the order details
 6. Click "Submit Order"
-7. Confirm the transaction
-8. Print or download the receipt
-
-#### View Inventory
-1. Go to "Inventory" section
-2. View all available products and stock levels
-3. Filter by category or search
-4. Check product details and pricing
 
 #### View Order History
 1. Navigate to "Orders" section
 2. View all your orders
-3. Click on an order to see detailed information
-4. Download order receipt if needed
 
-### For Administrators
 
-#### Manage Staff Accounts
-1. Go to Django Admin Panel: `http://localhost:8000/admin/`
-2. Navigate to "Users" or "Staff Management"
-3. Add new staff member with credentials
-4. Assign roles and permissions
-5. Deactivate/remove staff members
-
-#### Manage Products
-1. In Django Admin Panel, go to "Products"
-2. Add new product to inventory
-3. Update product details and pricing
-4. Remove discontinued items
-5. Update stock levels
-
-#### View Reports
-1. Go to "Reports" section in frontend
-2. View sales reports by date range
-3. Check inventory movement reports
-4. Analyze staff performance metrics
-5. Export data as needed
-
----
 
 ## Development
 
@@ -526,7 +496,8 @@ python manage.py runserver
 **Terminal 2 - Frontend:**
 ```bash
 cd frontend
-npm start
+cd inventory
+npm run start/dev
 ```
 
 ### Running Tests
@@ -758,7 +729,6 @@ We are actively working on exciting new features and improvements to make Veneva
   - Staff productivity reports
   - Customer purchase patterns
   - Revenue forecasting
-  - Export to multiple formats (PDF, CSV, Excel)
 
 #### **Supplier Management Module**
 - **Status**: Planned
@@ -770,15 +740,6 @@ We are actively working on exciting new features and improvements to make Veneva
   - Order history and tracking
   - Supplier performance ratings
 
-#### **Customer Loyalty Program**
-- **Status**: Planned
-- **Description**: Build customer engagement with loyalty rewards and incentives
-- **Features**:
-  - Loyalty points system
-  - Member registration and profiles
-  - Rewards redemption
-  - Special offers and promotions
-  - Customer segmentation
 
 #### **Mobile App (iOS & Android)**
 - **Status**: Planned
@@ -837,7 +798,7 @@ We encourage community contributions! If you're interested in helping develop an
   - Project Lead and Backend Development
      # Authors
 
-- Aaron Mutua [https://www.linkedin.com/in/aaron-mutua-62687a268]
+- Aaron Mutua :  Linked In [https://www.linkedin.com/in/aaron-mutua-62687a268]
 
 ### Contributors
 - Open for community contributions!
