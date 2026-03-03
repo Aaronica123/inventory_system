@@ -16,21 +16,17 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = [
     'veneva-supermarket.onrender.com', 
     '127.0.0.1', 
     'localhost',
-    os.environ.get('RENDER_EXTERNAL_HOSTNAME'), # This automatically catches Render's URL
+    os.environ.get('RENDER_EXTERNAL_HOSTNAME'), 
 ]
 
 
@@ -82,13 +78,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'inventory.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/6.0/ref/settings/#databases
+
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
-# if DATABASE_URL:
-    # --- CLOUD SETTINGS (Render/Azure/Supabase) ---
+
 DATABASES = {
     'default': dj_database_url.config(
         default=DATABASE_URL,
