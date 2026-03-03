@@ -27,7 +27,7 @@ from m1.fetch_amount import Amount
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('create_staff/',create_staff,name='create_staff'),
-    path('',Login,name='login'),
+    path('login/',Login,name='login'),
     path('staff_log/',log,name='staff_log'),
     path('logout/',Logout,name='logout'),
     path('order_details/',order,name='order_details'),
