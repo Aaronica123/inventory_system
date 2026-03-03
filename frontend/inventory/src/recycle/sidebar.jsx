@@ -20,6 +20,7 @@ function Sidebar(){
 
 
     const logout=async()=>{
+        
         const t=await fetch('http://localhost:8000/logout')
         if(t.ok){
             localStorage.removeItem('staff_id')
