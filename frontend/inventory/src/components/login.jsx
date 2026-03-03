@@ -20,9 +20,10 @@ const handle=(e)=>{
    
 };
  const handle_submit=async(e)=>{
+    const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
     e.preventDefault();
     try{
-        const response=await fetch('https://veneva-supermarket.onrender.com/login/',{
+        const response=await fetch(`${API_BASE}/login/`,{
             method:'POST',
             headers:{
                 'Content-type':'application/json'},

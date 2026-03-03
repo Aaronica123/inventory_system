@@ -6,9 +6,8 @@ from django.contrib.auth.hashers import check_password
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.shortcuts import redirect
 
-def redirect_to_frontend(request):
-    return redirect('https://veneva-supermarket.onrender.com/login/')
-
+# def redirect_to_frontend(request):
+#     return redirect('https://inventory-system-wine-three.vercel.app/login/')
 
 @csrf_exempt
 def Login(request):
@@ -56,8 +55,8 @@ def Login(request):
             return JsonResponse({'error': str(e)}, status=400)
             
     # 
-    elif(request.method=='GET'):
-        return redirect_to_frontend(request)
+    # elif(request.method=='GET'):
+    #     return redirect_to_frontend(request)
     else:
         return JsonResponse({'error': 'only post allowed'}, status=405)
         

@@ -155,19 +155,25 @@ STATIC_URL = 'static/'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "https://veneva-supermarket.onrender.com",
+    "https://inventory-system-wine-three.vercel.app",
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://veneva-supermarket.onrender.com"
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://veneva-supermarket.onrender.com"
+# ]
 CORS_ALLOW_CREDENTIALS = True
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://inventory-system-wine-three.vercel.app",
+    "https://veneva-supermarket.onrender.com"
+]
 
 if not DEBUG:
     SESSION_COOKIE_SECURE = True
