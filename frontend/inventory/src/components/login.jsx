@@ -20,7 +20,7 @@ const handle=(e)=>{
    
 };
  const handle_submit=async(e)=>{
-    const API_BASE = import.meta.env.REACT_APP_API_URL;
+    const API_BASE = import.meta.env.VITE_API_URL;
     e.preventDefault();
     try{
         const response=await fetch(`${API_BASE}/login/`,{
