@@ -21,8 +21,9 @@ function Register()
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
+        const API_BASE = import.meta.env.VITE_API_URL;
         try{
-            const response=await fetch('http://localhost:8000/create_staff/',{
+            const response=await fetch(`${API_BASE}/create_staff/`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json',
@@ -47,7 +48,7 @@ function Register()
 
         }
         catch(error){
-            alert("Couldnt connect to django");
+            alert("Couldnt connect to django",error);
         }
 
     }

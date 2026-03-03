@@ -19,8 +19,9 @@ function Card_1_(request){
     }
     const form_submit = async (e) => {
         e.preventDefault();
+        const API_BASE = import.meta.env.VITE_API_URL;
         try{
-            const report=await fetch('http://localhost:8000/staff_log/',{
+            const report=await fetch(`${API_BASE}/staff_log/`,{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -69,7 +70,8 @@ function Card_1_(request){
         if(e && e.preventDefault){
             e.preventDefault()
         }
-        const res=await fetch('http://localhost:8000/fetch_amount/',{
+        const API_BASE = import.meta.env.VITE_API_URL;
+        const res=await fetch(`${API_BASE}/fetch_amount/`,{
             method:'POST',
             headers:{
                 'Content-type':'application/json'

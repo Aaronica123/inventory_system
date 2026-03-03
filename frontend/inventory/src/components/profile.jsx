@@ -13,7 +13,8 @@ const side=async()=>{
 const[ld, setLd]=useState([])
 const pr=async(e)=>{
     e.preventDefault()
-    const ft=await fetch('http://localhost:8000/profile/',{
+    const API_BASE = import.meta.env.VITE_API_URL;
+    const ft=await fetch(`${API_BASE}/profile/`,{
         method:'POST',
         headers:{
             'Content-type':'application/type'

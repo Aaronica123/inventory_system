@@ -33,7 +33,8 @@ function Orders(){
 
     const send=async(e)=>{
             e.preventDefault();
-            const t=await fetch('http://localhost:8000/order_details/',{
+            const API_BASE = import.meta.env.VITE_API_URL;
+            const t=await fetch(`${API_BASE}/order_details/`,{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -81,7 +82,8 @@ function Orders(){
         if (e && e.preventDefault) {
         e.preventDefault();
     }
-        const res=await fetch('http://localhost:8000/product_name/',{
+    const API_BASE = import.meta.env.VITE_API_URL;
+        const res=await fetch(`${API_BASE}/product_name/`,{
             method:'POST',
             headers:{
                 'Content-type':'application/json'

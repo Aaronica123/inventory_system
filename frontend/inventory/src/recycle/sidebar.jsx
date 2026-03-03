@@ -20,8 +20,8 @@ function Sidebar(){
 
 
     const logout=async()=>{
-        
-        const t=await fetch('http://localhost:8000/logout')
+        const API_BASE = import.meta.env.VITE_API_URL;
+        const t=await fetch(`${API_BASE}/logout`)
         if(t.ok){
             localStorage.removeItem('staff_id')
             localStorage.removeItem('staff_name')
