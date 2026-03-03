@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-tn+w#!r8k2776qw5r@gzme64qzup+0pjfg9g9n6m*$e2khl*zd'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = [
     'veneva-supermarket.onrender.com', 
@@ -91,33 +91,12 @@ DATABASE_URL = os.environ.get('DATABASE_URL')
     # --- CLOUD SETTINGS (Render/Azure/Supabase) ---
 DATABASES = {
     'default': dj_database_url.config(
-        # Note: postgres.strcdhcwzzfkcrelowpb and Port 6543
-        default='postgres://postgres.strcdhcwzzfkcrelowpb:venevaproject@2026@aws-1-eu-west-3.pooler.supabase.com:6543/postgres?sslmode=require',
+        default=DATABASE_URL,
         conn_max_age=600,
         ssl_require=True
     )
 }
-# else:
-    # --- LOCAL SETTINGS (Your Windows PC) ---
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',  # Changed from 'inventory' to 'postgres'
-#         'USER': 'postgres.strcdhcwzzfkcrelowpb',
-#         'PASSWORD': 'Aaronica',
-#         'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
-#         'PORT': '6543',
-#         # Adding options for more stable cloud handshakes
-#         'OPTIONS': {
-#             'connect_timeout': 10,
-#         }
-#     }
-# }
 
-
-
-# Password validation
-# https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -160,9 +139,7 @@ CORS_ALLOWED_ORIGINS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# CSRF_TRUSTED_ORIGINS = [
-#     "https://veneva-supermarket.onrender.com"
-# ]
+
 CORS_ALLOW_CREDENTIALS = True
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
