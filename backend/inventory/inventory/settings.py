@@ -26,7 +26,12 @@ SECRET_KEY = 'django-insecure-tn+w#!r8k2776qw5r@gzme64qzup+0pjfg9g9n6m*$e2khl*zd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'veneva-supermarket.onrender.com', 
+    '127.0.0.1', 
+    'localhost',
+    os.environ.get('RENDER_EXTERNAL_HOSTNAME'), # This automatically catches Render's URL
+]
 
 
 # Application definition
