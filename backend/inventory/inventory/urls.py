@@ -24,6 +24,7 @@ from m1.fetch_profile import Profile
 from m1.fetch_product import product
 from m1.fetch_amount import Amount
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('create_staff/',create_staff,name='create_staff'),

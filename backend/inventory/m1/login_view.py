@@ -4,6 +4,10 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.hashers import check_password
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.shortcuts import redirect
+
+def redirect_to_frontend(request):
+    return redirect('https://veneva-supermarket.onrender.com/login/')
 
 
 @csrf_exempt
@@ -51,7 +55,12 @@ def Login(request):
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=400)
             
-    return JsonResponse({'error': 'only post allowed'}, status=405)
+    # 
+    elif(request.method=='GET'):
+        return redirect_to_frontend(request)
+    else:
+        return JsonResponse({'error': 'only post allowed'}, status=405)
+        
 
 # def Logout(request):
 #     response=JsonResponse({'session terminated'})
