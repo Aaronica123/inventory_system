@@ -38,9 +38,9 @@ def Login(request):
                     key='access_token',
                     value=access_token,
                     httponly=True,
-                    secure=False,
-                    samesite='Lax',
-                    max_age=60
+                    secure=True,
+                    samesite='None',
+                    max_age=3600
                 )
                 
                 request.session['staff_pk'] = staff.staff_count

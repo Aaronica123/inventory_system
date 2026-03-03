@@ -22,10 +22,11 @@ const handle=(e)=>{
  const handle_submit=async(e)=>{
     e.preventDefault();
     try{
-        const response=await fetch('http://localhost:8000/login/',{
+        const response=await fetch('https://veneva-supermarket.onrender.com/login/',{
             method:'POST',
             headers:{
                 'Content-type':'application/json'},
+            credentials: 'include',
             body: JSON.stringify({
                 staff_id:formHold.staff_id,
                 pass_word:formHold.pass_word
